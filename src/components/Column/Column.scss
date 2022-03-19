@@ -1,0 +1,55 @@
+@import '_setting.scss';
+
+.column {
+    flex: 0 0 auto;
+    width: 300px;
+    height: cacl(100% - #{$gap});
+    &:not(:first-child) {
+      // khong phai thang cuoi cung
+      margin-left: $gap;
+    }
+    
+    > * {
+      // viet chung cho cac the ben trong column
+      background-color: $list-bg-color;
+      color: #333;
+      padding: 0 8px;
+    }
+
+    header {
+      padding-left: 15px;
+      height: $column-header-height;
+      line-height: $column-header-height;
+      font-size: 16px;
+      font-weight: bold;
+      border-top-left-radius: $column-border-radius;
+      border-top-right-radius: $column-border-radius;
+    }
+
+    footer {
+      padding-left: 10px;
+      height: $column-footer-height;
+      line-height: $column-footer-height;
+      border-bottom-left-radius: $column-border-radius;
+      border-bottom-right-radius: $column-border-radius;
+    }
+
+    ul.task-list {
+      list-style-type: none;
+      margin: 0;
+      max-height: calc(100% - #{$column-header-height} - #{$column-footer-height});
+      overflow-y: auto; // co dinh chieu Y
+      &::-webkit-scrollbar {
+        -webkit-appearance: none; // de luc nao scrollbar cung xuat hien, khong thi hover no moi xuat hien
+      }
+
+      &::-webkit-scrollbar:vertical {
+        width: 11px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: darken($color: $list-bg-color, $amount: 15);
+        border-right: 5px $list-bg-color solid;
+      }
+    }
+  }

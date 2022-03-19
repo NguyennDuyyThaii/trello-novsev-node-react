@@ -1,0 +1,20 @@
+@import '_setting.scss';
+
+.board-content {
+    display: flex;
+    margin: 0 $gap $gap;
+    overflow-x: auto; // co dinh chieu X
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none; // de luc nao scrollbar cung xuat hien, khong thi hover no moi xuat hien
+    }
+
+    &::-webkit-scrollbar:horizontal {
+      height: 11px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $common-element;
+      border-radius: 8px;
+    }
+  }
